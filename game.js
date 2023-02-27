@@ -50,7 +50,7 @@ let questions = [
         choice1: "JavaScript",
         choice2: "Terminal/Bash",
         choice3: "For loops",
-        choice4: "Concole.log",
+        choice4: "Console.log",
         answer: 4,
     }
 ]
@@ -65,7 +65,6 @@ startGame = () => {
     availableQuestions = [...questions]
     getNewQuestion()
     startTimer(60)
-    /*let timeValue = 60;*/
 }
 
 getNewQuestion = () => {
@@ -93,6 +92,7 @@ getNewQuestion = () => {
     acceptingAnswers = true
     clearInterval(counter);
     startTimer(60);
+    checkAnswer('incorrect');
 }
 
 function startTimer(time) {
@@ -104,12 +104,17 @@ function startTimer(time) {
             clearInterval(counter);
             timeCount.textContent = '0';
         }
+        
     }
 
-    if(time === 0){};
-    then(stop)
-
+    function checkAnswer(answer) {
+        if (answer !== 'incorrect') {
+            timer -=10;
+        }
+        console.log(timer);
+    }
 }
+
 
 choices.forEach(choice => {
     choice.addEventListener('click', e => {
@@ -145,5 +150,4 @@ incrementScore = num => {
     score +=num
     scoreText.innerText = score
 }
-/*startTimer(60)*/
 startGame()
