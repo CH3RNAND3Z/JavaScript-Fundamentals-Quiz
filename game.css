@@ -67,6 +67,14 @@ body {
     width: 0%;
 }
 
+#time_text {
+    font-size: 3rem;
+}
+
+#timer_sec {
+    font-size: 3rem;
+}
+
 @media screen and (max-width: 768px) {
     .choice-container {
         min-width: 40rem;
